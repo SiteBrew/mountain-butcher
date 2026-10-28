@@ -68,7 +68,9 @@ export const PHOTOS = {
   interior: `${WP}/image2.jpeg`,
   pantry: `${WP}/image5.jpeg`,
   shelves: `${WP}/image6.jpeg`,
-  bakeryCase: `${WP}/image9.jpeg`,
+  /* Freezer case of specialty/exotic meat — alligator is clearly labelled
+     in this photograph. Previously mislabelled here as a bakery case. */
+  specialtyFreezer: `${WP}/image9.jpeg`,
   preparedCase: `${WP}/image10.jpeg`,
   board: `${WP}/image1-rotated.jpeg`,
   sauces: `${WP}/image12.jpeg`,
@@ -96,13 +98,13 @@ export const PILLARS = [
     kicker: '01 — The Counter',
     title: 'Hand-cut, every day',
     body:
-      'Hand-cut steaks, premium Wagyu beef, pork, poultry, fresh seafood and specialty meats — carefully selected with quality at the forefront.',
+      'Hand-cut steaks, premium Wagyu beef, pork, poultry, fresh seafood and specialty meats — carefully selected with quality at the forefront. Including cuts you will not find at the grocery store.',
     points: [
       'Hand-cut steaks',
       'Premium Wagyu beef',
       'Pork & poultry',
       'Fresh seafood',
-      'Specialty meats',
+      'Specialty & exotic meats — including alligator',
     ],
     photo: PHOTOS.butcherCase,
     alt: 'The butcher case at Mountain Butcher, filled with fresh cuts',
@@ -193,7 +195,7 @@ export const GALLERY = [
   { src: PHOTOS.counter, alt: 'The butcher counter and seating area' },
   { src: PHOTOS.interior, alt: 'Inside the shop' },
   { src: PHOTOS.sauces, alt: 'Sauces and marinades on display' },
-  { src: PHOTOS.bakeryCase, alt: 'Fresh baked goods in the case' },
+  { src: PHOTOS.specialtyFreezer, alt: 'Specialty and exotic meats in the freezer case, including alligator' },
   { src: PHOTOS.shelves, alt: 'Pantry shelves and specialty groceries' },
   { src: PHOTOS.wideInterior, alt: 'Display tables and refrigerated cases' },
   { src: PHOTOS.knives, alt: "A framed butcher's guide to knives on the wall" },
