@@ -1,0 +1,110 @@
+/*
+ * Mountain Butcher — design tokens.
+ *
+ * Direction: a mountain butcher shop, not a steakhouse chain. Near-black
+ * charcoal with warm cream, a brass accent for signage and a deep ember red
+ * reserved for the things that matter (call, directions, open/closed).
+ *
+ * Deliberate constraint: the client's photography is all 640x480, so there is
+ * no full-bleed photographic hero anywhere in this design. Weight is carried
+ * by type, rule lines and a topographic motif instead, and photos appear only
+ * in contained tiles where their resolution holds up.
+ */
+
+:root {
+  --char:      #0e0d0b;   /* page base                 */
+  --char-2:    #16140f;   /* raised surface            */
+  --char-3:    #211d16;   /* hairline / border         */
+  --cream:     #f3ece0;   /* primary text              */
+  --cream-dim: #b3a894;   /* secondary text            */
+  --faint:     #7d7363;   /* tertiary / labels         */
+  --brass:     #c89a3c;   /* accent — signage, rules   */
+  --brass-hi:  #e3b857;   /* accent hover              */
+  --ember:     #9a2b1e;   /* reserved: action + status */
+  --ember-hi:  #bd3626;
+
+  --shell: 1200px;
+
+  --fd: 'Oswald', 'Arial Narrow', sans-serif;  /* display */
+  --fb: 'Inter', system-ui, sans-serif;        /* body    */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--char);
+  color: var(--cream);
+  font-family: var(--fb);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* Keyboard focus must be obvious on a dark palette. */
+:focus-visible {
+  outline: 2px solid var(--brass-hi);
+  outline-offset: 3px;
+}
+
+.shell { max-width: var(--shell); margin: 0 auto; padding: 0 24px; }
+
+/* ── Type ─────────────────────────────────────────────── */
+.display {
+  font-family: var(--fd);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  line-height: .95;
+  margin: 0;
+}
+.kicker {
+  font-family: var(--fd);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: .72rem;
+  color: var(--brass);
+  margin: 0;
+}
+.lede { font-size: 1.15rem; color: var(--cream-dim); margin: 0; }
+
+/* ── Buttons ──────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-family: var(--fd); font-weight: 500;
+  text-transform: uppercase; letter-spacing: .12em; font-size: .82rem;
+  padding: .95rem 1.6rem; border: 1px solid transparent;
+  text-decoration: none; cursor: pointer;
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
+}
+.btn-primary { background: var(--ember); color: #fff; }
+.btn-primary:hover { background: var(--ember-hi); }
+.btn-ghost { border-color: var(--char-3); color: var(--cream); }
+.btn-ghost:hover { border-color: var(--brass); color: var(--brass-hi); }
+
+/* ── Topographic motif: the "mountain" cue, drawn not photographed ── */
+.topo {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      115deg,
+      transparent 0 38px,
+      rgba(200,154,60,.05) 38px 39px
+    );
+  mask-image: radial-gradient(130% 90% at 50% 0%, #000 10%, transparent 72%);
+  -webkit-mask-image: radial-gradient(130% 90% at 50% 0%, #000 10%, transparent 72%);
+}
+
+.rule { height: 1px; background: var(--char-3); border: 0; margin: 0; }
+
+section { position: relative; }
